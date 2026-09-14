@@ -29,14 +29,13 @@ app.use(cors(corsOptions));
 let items = [
     {id: 1, name: "Product1", deleted:false},
     {id: 2, name: "Product2", deleted:false},
-    {id: 3, name: "Product3", deleted:true}
+    {id: 3, name: "Product4", deleted:true}
 ];
 
 app.get('/products', (req, res, next) => {
     try {
         const activeItems = items.filter(i => !i.deleted);
         
-
         const etag = `"${Buffer.from(JSON.stringify(activeItems)).toString('base64')}"`;
         console.log(`etag ${etag}`);
         console.log(`If-None-Match ${req.headers['If-None-Match']}`)
