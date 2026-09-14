@@ -1,15 +1,60 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <h1>Products</h1>
-    <button id="fetchData">Get list</button>
+    <div class="container">
+
+        <h1>HTTP Conditional Request</h1>
+
+        <p>
+            Este ejemplo demuestra el uso de los encabezados
+            <code>ETag</code> e <code>If-None-Match</code>.
+        </p>
+
+        <button id="btnConsultar">
+            Consultar productos
+        </button>
+
+        <div class="info">
+
+            <p>
+                <strong>Estado HTTP:</strong>
+                <span id="status">Sin solicitud</span>
+            </p>
+
+            <p>
+                <strong>ETag almacenado:</strong>
+                <span id="etag">Ninguno</span>
+            </p>
+
+            <p id="mensaje"></p>
+
+        </div>
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Producto</th>
+                </tr>
+            </thead>
+
+            <tbody id="productos">
+            </tbody>
+
+        </table>
+
+    </div>
     <div id="dataContainer"></div>
     <script src="conditional.js"></script>
 </body>
+
 </html>
