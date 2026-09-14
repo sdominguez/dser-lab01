@@ -1,5 +1,5 @@
 
-const baseURL = "localhost:3000";
+const baseURL = "localhost:3001";
 
 document.getElementById('fetchData').addEventListener('click', ()=> {
     const etag = localStorage.getItem('etag');

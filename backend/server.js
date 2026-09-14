@@ -2,12 +2,6 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 
-/**
- * Definición de las opciones de Cors
- * permite conexiones desde cualquier origen
- * métodos de HTTP 
- * Expone el encabezado Etag para ser leido desde el cliente
- */
 const corsOptions = {
     origin: '*',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
@@ -15,15 +9,6 @@ const corsOptions = {
   };
 
 
-/**
- * Cros-origin Reference Sharing 
- * Mecanismo que permite o restringe las solicitudes HTTP 
- * a recursos de diferentes orígenes (dominios, protocolos o puertos) 
- * distintos al origen desde el cual se carga la página web.
- * 
- * Política de seguridad que ayuda a evitar ataques como el 
- * Cross-Site Request Forgery
- */
 app.use(cors(corsOptions));
 
 let items = [
@@ -67,5 +52,5 @@ app.use((err, req, res, next)=>{
 });
 
 app.listen(3000, ()=>
-    console.log("Server running on http://localhost:3000")
+    console.log("Server running on http://localhost:3001")
 );
